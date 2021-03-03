@@ -190,6 +190,55 @@ you may find it won't work 100% if you use a different one.
     ;; per mode with `ligature-mode'.
     (global-ligature-mode t))
 
+MonoLisa
+-------------
+
+This snippet is designed for the *MonoLisa* font;
+you may find it won't work 100% if you use a different one.
+
+::
+
+  (use-package ligature
+    :load-path "path-to-ligature-repo"
+    :config
+    ;; Enable the "www" ligature in every possible major mode
+    (ligature-set-ligatures 't '("www"))
+    ;; Enable traditional ligature support in eww-mode, if the
+    ;; `variable-pitch' face supports it
+    (ligature-set-ligatures 'eww-mode '("ff" "fi" "ffi"))
+    ;; Enable all MonoLisa ligatures in programming modes
+    (ligature-set-ligatures 'prog-mode '("-->" "->" "->>" "-<" "--<"
+                                         "-~" "]#" ".-" "!=" "!=="
+                                         "#(" "#{" "#[" "#_" "#_("
+                                         "/=" "/==" "|||" "||" ;; "|"
+                                         "==" "===" "==>" "=>" "=>>"
+                                         "=<<" "=/" ">-" ">->" ">="
+                                         ">=>" "<-" "<--" "<->" "<-<"
+                                         "<!--" "<|" "<||" "<|||"
+                                         "<|>" "<=" "<==" "<==>" "<=>"
+                                         "<=<" "<<-" "<<=" "<~" "<~>"
+                                         "<~~" "~-" "~@" "~=" "~>"
+                                         "~~" "~~>" ".=" "..=" "---"
+                                         "{|" "[|" ".."  "..."  "..<"
+                                         ".?"  "::" ":::" "::=" ":="
+                                         ":>" ":<" ";;" "!!"  "!!."
+                                         "!!!"  "?."  "?:" "??"  "?="
+                                         "**" "***" "*>" "*/" "#:"
+                                         "#!"  "#?"  "##" "###" "####"
+                                         "#=" "/*" "/>" "//" "///"
+                                         "&&" "|}" "|]" "$>" "++"
+                                         "+++" "+>" "=:=" "=!=" ">:"
+                                         ">>" ">>>" "<:" "<*" "<*>"
+                                         "<$" "<$>" "<+" "<+>" "<>"
+                                         "<<" "<<<" "</" "</>" "^="
+                                         "%%" "'''" "\"\"\"" ))
+
+    ;; Enables ligature checks globally in all buffers. You can also do it
+    ;; per mode with `ligature-mode'.
+    (global-ligature-mode t)
+    ))
+
+
 Can I contribute support for more fonts?
 ========================================
 
